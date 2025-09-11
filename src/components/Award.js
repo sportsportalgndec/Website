@@ -37,7 +37,7 @@ const Awards = () => {
       {/* Awards Intro */}
       
       <div className="awards-intro">
-        <h2>Awards & Achievements 🏅</h2>
+        // <h2>Awards & Achievements 🏅</h2>
         <p>
           Celebrating the triumphs of our athletes who inspire with passion,
           dedication, and teamwork.
@@ -58,3 +58,4 @@ const Awards = () => {
 };
 
 export default Awards;
+
