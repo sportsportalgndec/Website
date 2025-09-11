@@ -1,0 +1,265 @@
+/* ---------------- Base Carousel ---------------- */
+.carousel-section {
+  width: 100%;
+  height: 73vh;
+  overflow: hidden;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 20px;
+}
+
+.app__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(1);
+  transform: scale(1);
+}
+
+.app__bg__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.app__bg__image.current--image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.app__bg__image.next--image,
+.app__bg__image.previous--image {
+  opacity: 0;
+}
+
+/* ---------------- Card List ---------------- */
+.cardList {
+  flex-shrink: 0;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cards__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000px;
+  width: 700px;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.6s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Positioning states */
+.current--card {
+  transform: translateX(0) scale(1);
+  z-index: 3;
+}
+
+.next--card {
+  transform: translateX(220px) scale(0.9);
+  z-index: 2;
+}
+
+.previous--card {
+  transform: translateX(-220px) scale(0.9);
+  z-index: 2;
+}
+
+/* ---------------- Info List ---------------- */
+.infoList {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.info__wrapper {
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  top: 100px;   /* 👈 pehle 0 tha, ab neeche 80px shift ho jayega */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+
+.info.current--info {
+  opacity: 1;
+  position: relative;
+}
+
+.info h1 {
+  font-size: 2rem;
+  margin-top: 30px;   /* 👈 pushes the name down */
+  margin-bottom: 10px; /* 👈 extra gap before h4 */
+}
+
+
+.info h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+/* ---------------- Buttons ---------------- */
+.cardList__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s;
+}
+
+.cardList__btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.btn--left {
+  left: 10%;
+}
+
+.btn--right {
+  right: 10%;
+}
+
+.cardList__btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.cardList__btn svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+}
+
+/* ---------------- Facilities Section ---------------- */
+.facilities-section {
+  text-align: center;
+  background: #fff; 
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  margin: 0;
+}
+
+.facilities-heading {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin: 10px auto;
+  padding: 6px 16px;
+  z-index: 1;
+  color: #fff;
+}
+
+.facilities-heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  background-color: rgba(18, 14, 14, 0.85);
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 12px;
+  border: 2px solid #000000;
+  z-index: -1;
+}
+
+/* Mobile cards smaller */
+@media screen and (max-width: 768px) {
+  .cards__wrapper {
+    width: 90%;
+    height: 180px; 
+  }
+
+  .card {
+    width: 120px !important;
+    height: 100px !important;
+  }
+
+  .next--card {
+    transform: translateX(130px) scale(0.75) !important;
+  }
+
+  .previous--card {
+    transform: translateX(-130px) scale(0.75) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cards__wrapper {
+    height: 150px;
+  }
+
+  .card {
+    width: 100px !important;
+    height: 80px !important;
+  }
+
+  .next--card {
+    transform: translateX(110px) scale(0.7) !important;
+  }
+
+  .previous--card {
+    transform: translateX(-110px) scale(0.7) !important;
+  }
+}

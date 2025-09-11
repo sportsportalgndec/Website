@@ -1,0 +1,311 @@
+/* Staff Section Wrapper */
+.staff-container {
+  padding: 60px 20px;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8faff; /* softer background */
+  box-sizing: border-box;
+}
+
+/* Title */
+.staff-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Subtitle Box Fix */
+.staff-subtitle-box {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 50px auto; /* space below */
+  background: #e2e9ff;       /* slightly darker for contrast */
+  padding: 16px 24px;        /* more padding */
+  border-radius: 10px;
+  border-left: 5px solid #4a6cf7;
+  color: #222;               /* darker text for visibility */
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  position: relative;        /* make sure it's above other elements */
+  z-index: 5;                /* above group photo if needed */
+}
+
+
+/* Group Photo Section */
+.group-photo-section {
+  margin: 0 0 50px 0; /* bottom space added */
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  margin-top: -190px;
+}
+
+/* Group Photo Section - Desktop Fix */
+.group-photo-box {
+  position: relative;
+  width: 90%;              /* increased from 80% */
+  max-width: 1400px;       /* optional: slightly larger max width */
+  height: 440px;
+  overflow: hidden;
+  border-radius: 20px;     
+  margin: 0 auto;          
+}
+
+/* Image inside the box */
+.group-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 20px;     
+}
+
+
+
+
+
+
+/* Hover Zoom */
+.group-photo-box:hover .group-photo {
+  transform: scale(1.05);
+}
+
+
+
+/* Title Over Banner */
+.group-photo-title {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 6px 16px rgba(0,0,0,0.7);
+  z-index: 2;
+  padding: 12px 30px;
+  border-radius: 14px;
+
+  /* Transparent glass effect */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  letter-spacing: 1px;
+}
+
+
+/* Staff Grid Layout */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* Staff Card */
+.staff-card {
+  background: linear-gradient(145deg, #ffffff, #f6f9ff);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #e0eaff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 18px;
+}
+
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  border-color: #7daaff;
+}
+
+.staff-card {
+  background: linear-gradient(145deg, #ffffff, #f6f9ff);
+  border-radius: 16px;
+  border: 2px solid #e52f2c; /* red border like extramural */
+  box-shadow: 0 0 12px rgba(252, 72, 17, 0.3); /* glowing red shadow */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 18px;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(216, 50, 20, 0.6), 0 0 16px rgba(251, 51, 25, 0.4); /* softer glow */
+  border-color: #d14424;
+}
+
+
+/* Image Box */
+.staff-img-container {
+  width: 120px;
+  height: 160px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #e52f2c; /* match border */
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.staff-card:hover .staff-img-container {
+  border-color: #d14424; /* hover red */
+  transform: scale(1.04);
+}
+
+.staff-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.staff-card:hover .staff-img {
+  transform: scale(1.08);
+}
+
+/* Staff Info */
+.staff-body {
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.staff-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* Role Badge */
+.staff-role {
+  font-size: 14px;
+  color: #333;
+  background: #eaf0ff;
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid #cddcff;
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 500;
+}
+/* ---------------------------
+   RESPONSIVENESS
+---------------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .staff-title {
+    font-size: 28px;
+  }
+  .staff-subtitle-box {
+    font-size: 15px;
+    padding: 12px 18px;
+    margin-bottom: 40px;
+  }
+  .group-photo-box {
+    height: 320px;
+  }
+  .group-photo-title {
+    font-size: 28px;
+    padding: 8px 20px;
+  }
+  .staff-grid {
+    gap: 25px;
+    margin-top: 40px;
+  }
+  .staff-img-container {
+    width: 110px;
+    height: 150px;
+  }
+  .staff-name {
+    font-size: 16px;
+  }
+  .staff-role {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .staff-title {
+    font-size: 22px;
+  }
+  .staff-subtitle-box {
+    font-size: 14px;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+  }
+
+  .group-photo-section {
+    margin-top:-120px;        /* positive value for mobile */
+    padding: 0 10px;         /* left-right safe padding */
+    box-sizing: border-box;  
+    width: 100%;    
+             /* full width without overflow */
+  }
+
+  .group-photo-box {
+    width: 100%;
+    max-width: 100%;
+    height: auto;            
+    overflow: hidden;
+    margin: 0 auto;          /* center properly */
+  }
+
+  .group-photo {
+    width: 100%;
+    height: auto;
+    max-height: 260px;       
+    display: block;
+    margin: 0 auto;          /* horizontal center */
+    object-fit: cover;
+    
+  }
+
+  .group-photo-title {
+    font-size: 20px;
+    padding: 6px 14px;
+  }
+
+  .staff-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 10px;           /* prevent side overflow */
+  }
+
+  .staff-card {
+    padding-bottom: 14px;
+  }
+
+  .staff-img-container {
+    width: 90px;
+    height: 120px;
+    margin-top: 12px;
+  }
+
+  .staff-name {
+    font-size: 15px;
+  }
+
+  .staff-role {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+

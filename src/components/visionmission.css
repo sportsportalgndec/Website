@@ -1,0 +1,235 @@
+/* Overall section layout */
+.vision-mission-section {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr; /* left wider, right smaller */
+  gap: 30px;
+  padding: 40px;
+  align-items: start;
+  background: #f8f9fa;
+  border-radius: 16px;
+}
+
+/* Left Images / Awards */
+.vm-images .row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.image-box {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.image-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(65%);
+  display: block;
+  border: none;
+}
+
+/* Overlay text on awards */
+.overlay-text {
+  position: absolute;
+  bottom: 8px;                  /* a little closer to bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffcc00;
+  font-size: 1rem;              /* slightly smaller text */
+  font-weight: 700;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 2px 6px;             /* reduced padding -> smaller box height */
+  border-radius: 4px;
+  background: rgba(0,0,0,0.35); /* a little darker for readability */
+  line-height:0.2;             /* tighter spacing inside */
+}
+.awards-description{
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* space below */
+  background: #e2e9ff;       /* slightly darker for contrast */
+  padding: 16px 24px;        /* more padding */
+  border-radius: 10px;
+  border-left: 5px solid #4a6cf7;
+  color: #222;               /* darker text for visibility */
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  position: relative;        /* make sure it's above other elements */
+  z-index: 5;                /* above group photo if needed */
+}        
+
+/* Single row image */
+.vm-images .row.single {
+  justify-content: center;
+}
+
+.vm-images .row.single .image-box {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.vm-images .row.single img {
+  height: 260px;
+}
+
+/* Gap between award rows */
+.vm-images .row + .row {
+  margin-top: 40px;
+}
+
+/* Awards Heading */
+.awards-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.medal-icon {
+  color: #f4b400;
+  font-size: 1.5rem;
+}
+
+/* Right Content - Vision & Mission */
+.vm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin-left: 60px;
+}
+
+/* Vision & Mission Box */
+.ellipse-box.vision,
+.ellipse-box.mission {
+  background: #a9c3dd58;
+  border: 2px solid #003366;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Heading styling */
+.ellipse-box.vision h3,
+.ellipse-box.mission h3 {
+  color: #003366;
+  font-size: 1.35rem;
+  margin-top: 1px;
+  margin-bottom: 6px;
+}
+
+/* Paragraph styling */
+.ellipse-box.vision p,
+.ellipse-box.mission p {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: #333;
+  margin: 0;
+}
+
+.ellipse-box.mission p br {
+  content: "";
+  display: block;
+  margin: 2px 0;
+}
+
+.mission-points {
+  padding-left: 20px;
+  margin: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.mission-points li {
+  margin-bottom: 8px;
+}
+
+/* Awards description box */
+.awards-description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  text-align: center;
+ 
+  padding: 5px 0 20px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 992px) {
+  .vision-mission-section {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Move Vision & Mission on top */
+  .vm-content {
+    order: -1; /* appears first */
+    margin-left: 0;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 576px) {
+  .overlay-text {
+    font-size: 0.8rem;        /* chhoti font */
+    padding: 2px 5px;         /* kam padding */
+    line-height: 1.2;         /* proper spacing */
+    bottom: 6px;              /* thoda aur neeche */
+    max-width: 100%;           /* width responsive */
+    text-align: center;       /* center align */
+    white-space: normal;      /* wrap allow */
+  }
+}
+
+
+  /* Images/Awards full width */
+  .vm-images .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .awards-description{
+    font-size: 14px;
+    padding: 10px 16px;
+    margin-bottom: 40px;
+  }
+  .image-box {
+    width: 100%;
+  }
+
+  .image-box img {
+    height: auto; /* auto for responsiveness */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ellipse-box.vision,
+  .ellipse-box.mission {
+    padding: 12px 10px;
+  }
+
+  .ellipse-box.vision h3,
+  .ellipse-box.mission h3 {
+    font-size: 1.2rem;
+  }
+
+  .ellipse-box.vision p,
+  .ellipse-box.mission p {
+    font-size: 0.9rem;
+  }
+
+  .vm-images .row.single .image-box {
+    width: 90%;
+  }
+}

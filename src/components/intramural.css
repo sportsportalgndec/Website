@@ -1,0 +1,211 @@
+/* ---------------------------
+   INTRA MURAL CARDS CSS (Extra Mural style, 4 cards per row, full width)
+----------------------------*/
+
+/* Hero Section */
+.hero-section {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+}
+
+/* Container - Full Width */
+.intra-container {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  box-sizing: border-box;
+  margin-top: -180px;
+}
+
+/* Title & Subtitle */
+.intra-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #222;
+  margin-top: -140px;
+}
+
+.intra-subtitle {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  background: #e2e9ff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border-left: 5px solid #4a6cf7;
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 5;
+}  
+
+/* Grid - 4 Cards per Row Full Width */
+.intra-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 25px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card */
+.intracard {
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid #e52f2c; /* Extra Mural style red */
+  box-shadow: 0 2px 8px rgba(229, 47, 44, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  height: 180px; /* rectangular style */
+}
+
+/* Hover */
+.intracard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(216, 50, 20, 0.6), 0 0 16px rgba(251, 51, 25, 0.4);
+  border-color: #d14424;
+}
+
+/* Decorative top strip */
+.intracard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #e52f2c, #d14424);
+}
+
+/* Card Image */
+.card-img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  border-bottom: 2px solid #e52f2c;
+}
+
+/* Card Body */
+.card-body {
+  padding: 4px 8px 6px 8px;
+  background: radial-gradient(circle at top left, rgba(200, 16, 46, 0.05), transparent 70%);
+  border-radius: 0 0 15px 15px;
+}
+
+/* Text */
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e52f2c;
+  margin-bottom: 6px;
+  margin-top: auto;
+}
+
+.card-desc {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Button */
+.card-btn {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border: none;
+  padding: 10px 22px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #feb47b, #ff7e5f);
+}
+
+/* ---------------------------
+   RESPONSIVENESS
+----------------------------*/
+
+/* Desktop <=1200px - 3 cards */
+@media screen and (max-width: 1200px) {
+  .intra-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet <=992px - 2 cards */
+@media screen and (max-width: 992px) {
+  .intra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile <=576px - 1 card */
+@media screen and (max-width: 576px) {
+  .intra-container {
+    margin-top: -100px;          
+    padding: 40px 10px;          
+  }
+
+  .intra-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .intra-subtitle {
+    font-size: 14px;
+    padding: 10px 16px;
+    margin-bottom: 40px;
+  }
+
+  .card-img {
+    height: 150px; /* image height increased */
+  }
+
+  .card-title {
+    font-size: 14px; /* slightly bigger title if needed */
+  }
+
+  .card-desc {
+    font-size: 10px;
+    max-height: 30px; /* text box height reduced */
+    overflow: hidden;  /* prevent overflow */
+  }
+}
+

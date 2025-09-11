@@ -1,0 +1,153 @@
+/* Make the awards section full width */
+.awards-section {
+  width: 100vw;
+  padding: 80px 40px;
+  margin: -160px 0 0 0;  /* move the section up */
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #f8faff;
+}
+
+/* Awards Intro (heading + description) */
+.awards-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.awards-intro p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 50px auto; /* space below */
+  background: #e2e9ff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border-left: 5px solid #4a6cf7;
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 5;
+}                                                                        
+
+.awards-intro h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 15px;
+  margin-top: -50px;
+}
+
+/* Heading (if you want to use separately) */
+.awards-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Grid for awards */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 cards per row */
+  gap: 30px;
+  justify-items: stretch; /* stretch cards to fill width */
+  max-width: 100%;        /* full width */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Individual Award Cards */
+.award-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #e52f2c;  
+  box-shadow: 0 2px 8px rgba(229, 47, 44, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  width: 100%;   /* full width inside column */
+}
+
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(216, 50, 20, 0.6), 
+              0 0 16px rgba(251, 51, 25, 0.4);
+  border-color: #d14424;
+}
+
+.award-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.award-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay text */
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 10px;        /* vertical padding bada di */
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  font-weight: 600;
+  border-radius: 0 0 10px 10px;
+  font-size: 1.05rem;        /* text thoda bada */
+  letter-spacing: 0.3px;
+  line-height: 1;          /* text aur space ke liye */
+  min-height: 20px;           /* box ki minimum height set ki */
+}
+
+/* ===== Tablet Responsiveness ===== */
+@media screen and (max-width: 1024px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 20px;
+  }
+
+  .award-card img {
+    height: 220px;
+  }
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media screen and (max-width: 600px) {
+  .awards-section {
+    padding: 20px 10px;
+    margin-top: -50px;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: 600px) {
+  .overlay-text {
+    font-size: 1rem;
+    padding: 12px 8px;
+    min-height: 45px;
+  }
+}
+
+
+  .awards-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .awards-intro p {
+    font-size: 0.85rem;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr; /* single column on small screens */
+    gap: 15px;
+  }
+
+  .award-card img {
+    height: 200px;
+  }
+
+  .awards-heading {
+    font-size: 20px;
+  }
+}

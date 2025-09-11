@@ -1,0 +1,180 @@
+.hero-container {
+  position: relative;
+  height: 100vh;     /* full viewport height */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background image full width maintain ratio */
+.bg-img {
+  width: 100%;       /* full screen width */
+  height: auto;      /* height adjust automatically */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;       /* behind everything */
+}
+
+/* Player positioned manually */
+.player-img {
+  position: absolute;
+       
+  top: 60px;     
+  width: 1750px;   /* adjust as needed */
+  z-index: 2;
+}
+
+.hero-right {
+  position: absolute;
+  right: 4%;
+  top: 180px;
+  max-width: 120%;
+  color: white;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-right h1 {
+  font-size: 5.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;   /* 👈 little more relaxed */
+  margin: 0;          /* remove extra margin */
+}
+
+.hero-right h1 .line1 {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 0.3rem;   /* 👈 small gap below first line */
+}
+
+.hero-right h1 .line2 {
+  display: block;
+  color: #00d4ff;
+  font-style: italic;
+  margin-left: 40px;   /* 👈 indent second line */
+}
+
+
+@media (max-width: 1024px) {
+  .hero-container {
+    height: 40vh; /* laptop se chhoti screen par thoda kam height */
+  }
+
+  .player-img {
+    width: 50vw;   /* image ko viewport width ke hisaab se responsive */
+    top: 35%;      /* center ke paas adjust */
+    transform: translateY(-50%);
+  }
+
+  .hero-right {
+    top: 12%; 
+    right: 5%;
+  }
+
+  .hero-right h1 {
+    font-size: 3.5vw; /* responsive text size */
+  }
+
+  .hero-right h1 .line2 {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 20vh; /* mobile ke liye aur kam height */
+  }
+
+  .player-img {
+    width: 60vw;  /* mobile par chhoti image */
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  .hero-right {
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero-right h1 {
+    font-size: 6vw; /* viewport width ke hisaab se text */
+  }
+
+  .hero-right h1 .line2 {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 24vh; /* thoda zyada height */
+  }
+
+  .player-img {
+    width: 70vw;  
+    top: 42%;
+    transform: translateY(-50%);
+  }
+
+  .hero-right {
+    top: 10%;
+    right: 4%;
+  }
+
+  .hero-right h1 {
+    font-size: 7vw; 
+  }
+
+  .hero-right h1 .line2 {
+    margin-left: 5px;
+  }
+}
+
+/* Extra small devices (360px - 400px) */
+@media (max-width: 400px) {
+  .hero-container {
+    height: 30vh; /* aur zyada height so image cut na ho */
+  }
+
+  .player-img {
+    width: 75vw;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .hero-right {
+    top: 12%;
+    right: 5%;
+  }
+
+  .hero-right h1 {
+    font-size: 8vw; /* readable text */
+  }
+}
+
+@media (max-width: 350px) {
+  .hero-container {
+    height: 20vh; /* aur zyada height so image cut na ho */
+  }
+
+  .player-img {
+    width: 75vw;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .hero-right {
+    top: 12%;
+    right: 5%;
+  }
+
+  .hero-right h1 {
+    font-size: 8vw; /* readable text */
+  }
+}
+
+
+

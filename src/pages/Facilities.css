@@ -1,0 +1,277 @@
+/* ================= Facilities Page Base ================= */
+.facilities-container {
+  max-width: 2000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.facility-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  gap: 30px;
+}
+.facilities-subtitle {
+  font-size: 16px;
+  max-width: 800px;
+  margin: -130px auto 40px auto;
+  background: #e2e9ff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border-left: 5px solid #4a6cf7;
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 5;
+} 
+
+.facility-row.reverse {
+  flex-direction: column-reverse;
+}
+
+.facility-image img {
+  width: 500px;
+  max-width: 500px;
+  height:320px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.5s;
+}
+
+.facility-image img:hover {
+  transform: scale(1.05);
+}
+
+.facility-text {
+  max-width: 950px;
+  text-align: center;
+
+}
+
+.facility-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.facility-text p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4b5563;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .facility-row {
+    flex-direction: row;
+    text-align: left;
+    gap: 50px;
+  }
+
+  .facility-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .facility-text {
+    text-align: left;
+  }
+   .faciliies-subtitle {
+    font-size: 14px;
+    padding: 10px 16px;
+    margin-bottom: 40px;
+  }
+}
+
+/* ================= Carousel Component ================= */
+.carousel-section {
+  width: 100%;
+  height: 73vh;
+  overflow: hidden;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Card List */
+.cardList {
+  flex-shrink: 0;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cards__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000px;
+  width: 700px;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.6s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Positioning states */
+.current--card {
+  transform: translateX(0) scale(1);
+  z-index: 3;
+}
+
+.next--card {
+  transform: translateX(220px) scale(0.9);
+  z-index: 2;
+}
+
+.previous--card {
+  transform: translateX(-220px) scale(0.9);
+  z-index: 2;
+}
+
+/* Info List */
+.infoList1 {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.info__wrapper1 {
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.info.current--info {
+  opacity: 1;
+  position: relative;
+}
+
+.info h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.info h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+/* Buttons */
+.cardList__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(24, 16, 16, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s;
+}
+
+.cardList__btn:hover {
+  background: rgb(255, 0, 0);
+}
+
+.btn--left {
+  left: 10%;
+}
+
+.btn--right {
+  right: 10%;
+}
+
+.cardList__btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.cardList__btn svg {
+  width: 28px;
+  height: 28px;
+  stroke: #140202;
+}
+
+/* Facilities Section Heading */
+.facilities-section {
+  text-align: center;
+  background: #fff; 
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .facility-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+    .facility-image img {
+    max-width: 100%;   /* not full width, slightly smaller */
+    height: auto;
+  }
+  .facilities-subtitle {
+    font-size: 14px;
+    margin-top: -70px;
+    padding: 10px 16px;
+    margin-bottom: 40px;
+  }
+
+   .facility-row {
+    flex-direction: column !important; /* always stack */
+    align-items: center;
+    text-align: center;
+  }
+
+  .facility-row.reverse {
+    flex-direction: column !important; /* override reverse */
+  }
+
+  .cardList__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn--left { left: 2%; }
+  .btn--right { right: 2%; }
+}

@@ -1,0 +1,192 @@
+.hod-notice-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Left small, center large, right small */
+  gap: 20px;
+  padding: 30px;
+  background-color: #f4f6f8;
+  margin-top: -190px;  /* Pure section ko thoda upar kheenchna */
+}
+
+/* Common box style */
+.notice-board, .hod-section, .description {
+  background: #d9a10624;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Notice Board */
+.notice-board {
+  margin-top: 80px; /* 👈 Notice board ko neeche shift karne ke liye */
+}
+
+.notice-board h2 {
+  text-align: center;
+   background: linear-gradient(90deg, #ff7043, #e64a19);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.3rem;
+}
+
+.notice-board ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+.notice-board li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Center Description */
+.description {
+  margin-top: -10px;
+  align-items: center; /* 👈 Description ko thoda adjust karne ke liye */
+}
+
+.description h2 {
+  color: #003366;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* HOD Section */
+.hod-section {
+  text-align: center;
+  margin-top: 80px; /* HOD section ke liye manual margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hod-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;   /* image ko crop karke fill karega */
+  object-position: top center; /* agar face upar ho to focus yaha karega */
+  border: 3px solid #0077ff;
+}
+
+
+.hod-section h3 {
+  color: #003366;
+  margin: 0; /* remove default margin to tighten spacing */
+}
+
+.hod-designation {
+  color: #0077ff;
+  font-size: 1rem;
+  margin: 2px 0 15px 0; /* small top margin to move it closer to name */
+  font-weight: 500;
+}
+
+.hod-section p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0; /* remove default margin to avoid pushing down */
+  text-align: justify;
+}
+
+/* ===== Responsive for tablets ===== */
+@media screen and (max-width: 992px) {
+  .hod-notice-section {
+    grid-template-columns: 1fr; /* stack all columns vertically */
+    gap: 20px;
+    padding: 20px;
+    margin-top: -100px; /* reduce negative top margin for smaller screens */
+  }
+
+  .notice-board,
+  .description,
+  .hod-section {
+    margin-top: 20px; /* equal spacing */
+    padding: 15px;
+  }
+
+  .notice-board h2,
+  .description h2 {
+    font-size: 1.2rem;
+  }
+
+  .notice-board li {
+    font-size: 14px;
+  }
+
+  .description p {
+    font-size: 0.95rem;
+  }
+
+  .hod-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .hod-designation {
+    font-size: 0.9rem;
+  }
+
+  .hod-section p {
+    font-size: 0.9rem;
+  }
+
+  .hod-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ===== Responsive for phones ===== */
+@media screen and (max-width: 576px) {
+  .hod-notice-section {
+    grid-template-columns: 1fr; /* stack vertically */
+    padding: 15px;
+    gap: 15px;
+    margin-top: -80px;
+  }
+
+  .notice-board,
+  .description,
+  .hod-section {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .notice-board h2,
+  .description h2 {
+    font-size: 1rem;
+  }
+
+  .notice-board li {
+    font-size: 13px;
+  }
+
+  .description p {
+    font-size: 0.85rem;
+  }
+
+  .hod-section h3 {
+    font-size: 1rem;
+  }
+
+  .hod-designation {
+    font-size: 0.85rem;
+  }
+
+  .hod-section p {
+    font-size: 0.85rem;
+  }
+
+  .hod-image {
+    width: 100px;
+    height: 100px;
+  }
+}
