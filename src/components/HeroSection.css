@@ -1,267 +1,192 @@
-.hero-container {
-  position: relative;
-  height: 100vh;     /* full viewport height */
-  width: 100%;
-  overflow: hidden;
+.hod-notice-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Left small, center large, right small */
+  gap: 20px;
+  padding: 30px;
+  background-color: #f4f6f8;
+  margin-top: -190px;  /* Pure section ko thoda upar kheenchna */
 }
 
-/* Background image full width maintain ratio */
-.bg-img {
-  width: 100%;       /* full screen width */
-  height: auto;      /* height adjust automatically */
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;       /* behind everything */
+/* Common box style */
+.notice-board, .hod-section, .description {
+  background: #d9a10624;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.registration-box {
-  width: 100%;
-  padding: 14px 0;
+
+/* Notice Board */
+.notice-board {
+  margin-top: 80px; /* 👈 Notice board ko neeche shift karne ke liye */
+}
+
+.notice-board h2 {
   text-align: center;
-  background: linear-gradient(
-    90deg,
-    rgba(249, 6, 6, 0.85),
-    rgba(239, 35, 76, 0.803)
-  );
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-bottom: 6px solid #f1f3f3;
-}
-
-/* Click Here link */
-.register-link {
-  margin-left: 8px;
-  cursor: pointer;
-  font-weight: 800;
-  color: #0c0c0c;
-  text-decoration: none;
-  position: relative;
-}
-.registration-text {
-  cursor: pointer;
-  font-weight: 600;
-  margin: 0 6px;
-}
-
-.registration-text:hover {
-  color: #0c0c0c;
-}
-
-/* underline animation */
-.register-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background: #df4e14c7;
-  transition: width 0.3s ease;
-}
-
-.register-link:hover::after {
-  width: 100%;
-}
-
-.register-link:hover {
-  color: #ffffff;
-}
-
-/* 🔔 Popup */
-.popup-message {
-  position: fixed;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  padding: 14px 22px;
-  border-radius: 8px;
-  font-size: 15px;
-  z-index: 999;
-  border-left: 4px solid #c8d0d2;
-  box-shadow: 0 8px 25px rgba(221, 237, 241, 0.3);
-}
-
-
-
-
-/* Player positioned manually */
-.player-img {
-  position: absolute;
-       
-  top: 60px;     
-  width: 1750px;   /* adjust as needed */
-  z-index: 2;
-}
-
-.hero-right {
-  position: absolute;
-  right: 4%;
-  top: 180px;
-  max-width: 120%;
+   background: linear-gradient(90deg, #ff7043, #e64a19);
   color: white;
-  text-align: left;
-  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.3rem;
 }
 
-.hero-right h1 {
-  font-size: 5.6rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-  line-height: 1.1;   /* 👈 little more relaxed */
-  margin: 0;          /* remove extra margin */
+.notice-board ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+.notice-board li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Center Description */
+.description {
+  margin-top: -10px;
+  align-items: center; /* 👈 Description ko thoda adjust karne ke liye */
+}
+
+.description h2 {
+  color: #003366;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* HOD Section */
+.hod-section {
+  text-align: center;
+  margin-top: 80px; /* HOD section ke liye manual margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hod-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;   /* image ko crop karke fill karega */
+  object-position: top center; /* agar face upar ho to focus yaha karega */
+  border: 3px solid #0077ff;
 }
 
 
-.hero-right h1 .line1 {
-  display: block;
-  color: #ffffff;
-  margin-bottom: 0.3rem;   /* 👈 small gap below first line */
+.hod-section h3 {
+  color: #003366;
+  margin: 0; /* remove default margin to tighten spacing */
 }
 
-.hero-right h1 .line2 {
-  display: block;
-  color: #00d4ff;
-  font-style: italic;
-  margin-left: 40px;   /* 👈 indent second line */
+.hod-designation {
+  color: #0077ff;
+  font-size: 1rem;
+  margin: 2px 0 15px 0; /* small top margin to move it closer to name */
+  font-weight: 500;
 }
 
+.hod-section p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0; /* remove default margin to avoid pushing down */
+  text-align: justify;
+}
 
-@media (max-width: 1024px) {
-  .hero-container {
-    height: 40vh; /* laptop se chhoti screen par thoda kam height */
+/* ===== Responsive for tablets ===== */
+@media screen and (max-width: 992px) {
+  .hod-notice-section {
+    grid-template-columns: 1fr; /* stack all columns vertically */
+    gap: 20px;
+    padding: 20px;
+    margin-top: -100px; /* reduce negative top margin for smaller screens */
   }
-  /* Mobile */
-@media (max-width: 768px) {
-  .registration-box {
-    font-size: 15px;
-    padding: 10px 0;
+
+  .notice-board,
+  .description,
+  .hod-section {
+    margin-top: 20px; /* equal spacing */
+    padding: 15px;
   }
 
-  .popup-message {
+  .notice-board h2,
+  .description h2 {
+    font-size: 1.2rem;
+  }
+
+  .notice-board li {
+    font-size: 14px;
+  }
+
+  .description p {
+    font-size: 0.95rem;
+  }
+
+  .hod-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .hod-designation {
+    font-size: 0.9rem;
+  }
+
+  .hod-section p {
+    font-size: 0.9rem;
+  }
+
+  .hod-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ===== Responsive for phones ===== */
+@media screen and (max-width: 576px) {
+  .hod-notice-section {
+    grid-template-columns: 1fr; /* stack vertically */
+    padding: 15px;
+    gap: 15px;
+    margin-top: -80px;
+  }
+
+  .notice-board,
+  .description,
+  .hod-section {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .notice-board h2,
+  .description h2 {
+    font-size: 1rem;
+  }
+
+  .notice-board li {
     font-size: 13px;
-    width: 90%;
-    text-align: center;
+  }
+
+  .description p {
+    font-size: 0.85rem;
+  }
+
+  .hod-section h3 {
+    font-size: 1rem;
+  }
+
+  .hod-designation {
+    font-size: 0.85rem;
+  }
+
+  .hod-section p {
+    font-size: 0.85rem;
+  }
+
+  .hod-image {
+    width: 100px;
+    height: 100px;
   }
 }
-
-  .player-img {
-    width: 50vw;   /* image ko viewport width ke hisaab se responsive */
-    top: 35%;      /* center ke paas adjust */
-    transform: translateY(-50%);
-  }
-
-  .hero-right {
-    top: 12%; 
-    right: 5%;
-  }
-
-  .hero-right h1 {
-    font-size: 3.5vw; /* responsive text size */
-  }
-
-  .hero-right h1 .line2 {
-    margin-left: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    height: 20vh; /* mobile ke liye aur kam height */
-  }
-
-  .player-img {
-    width: 60vw;  /* mobile par chhoti image */
-    top: 40%;
-    transform: translateY(-50%);
-  }
-
-  .hero-right {
-    top: 10%;
-    right: 5%;
-  }
-
-  .hero-right h1 {
-    font-size: 6vw; /* viewport width ke hisaab se text */
-  }
-
-  .hero-right h1 .line2 {
-    margin-left: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-container {
-    height: 24vh; /* thoda zyada height */
-  }
-
-  .player-img {
-    width: 70vw;  
-    top: 42%;
-    transform: translateY(-50%);
-  }
-
-  .hero-right {
-    top: 10%;
-    right: 4%;
-  }
-
-  .hero-right h1 {
-    font-size: 7vw; 
-  }
-
-  .hero-right h1 .line2 {
-    margin-left: 5px;
-  }
-}
-
-/* Extra small devices (360px - 400px) */
-@media (max-width: 400px) {
-  .hero-container {
-    height: 30vh; /* aur zyada height so image cut na ho */
-  }
-
-  .player-img {
-    width: 75vw;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-
-  .hero-right {
-    top: 12%;
-    right: 5%;
-  }
-
-  .hero-right h1 {
-    font-size: 8vw; /* readable text */
-  }
-}
-
-@media (max-width: 350px) {
-  .hero-container {
-    height: 20vh; /* aur zyada height so image cut na ho */
-  }
-
-  .player-img {
-    width: 75vw;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-
-  .hero-right {
-    top: 12%;
-    right: 5%;
-  }
-
-  .hero-right h1 {
-    font-size: 8vw; /* readable text */
-  }
-}
-
-
-
