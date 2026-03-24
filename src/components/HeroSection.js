@@ -4,25 +4,11 @@ import "./HeroSection.css";
 function HeroSection({ slides }) {
   const [current] = useState(() => Math.floor(Math.random() * slides.length));
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [showPopup, setShowPopup] = useState(false);
-
+  
   const slide = slides[current];
-  const registrationLink = "https://athletic.gndecsports.com/register";
+ 
 
-  // 🔒 Registration open date
-  const registrationOpenDate = new Date("2026-02-09");
-
-  const handleRegisterClick = () => {
-    const today = new Date();
-
-    if (today >= registrationOpenDate) {
-      window.open(registrationLink, "_blank");
-    } else {
-      setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 3000);
-    }
-  };
-
+  
   // Update isMobile on window resize
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -32,35 +18,7 @@ function HeroSection({ slides }) {
 
   return (
     <>
-      {/* 🔶 Registration Box */}
-     <div className="registration-box">
-  <span
-    className="registration-text"
-    onClick={handleRegisterClick}
-  >
-    Registrations for the{" "}
-    <span className="edition">
-      65<sup>th</sup>
-    </span>{" "}
-    Annual Athletic Championship
-  </span>
-
-  <span
-    className="register-link"
-    onClick={handleRegisterClick}
-  >
-    Click Here
-  </span>
-</div>
-
-      {/* 🔔 Popup Message */}
-      {showPopup && (
-        <div className="popup-message">
-          ❌ Sorry! Registration opens from{" "}
-          <strong>9 February 2026</strong>
-        </div>
-      )}
-
+    
       {/* 🔥 Hero Section */}
       <div className="hero-container">
         {/* Background */}
